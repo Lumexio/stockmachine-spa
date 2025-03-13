@@ -1,8 +1,9 @@
 <template>
-  <div class='cards-container'>
+  <dev class="content-section">
+
     <DescriptionCard />
     <DownloadCard />
-  </div>
+  </dev>
 </template>
 <script setup>
 

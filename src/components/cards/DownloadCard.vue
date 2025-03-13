@@ -6,11 +6,12 @@
     <div class='card-actions'>
       <button class='button-accent' @click="handleDownload('windows')">
         <FontAwesomeIcon size='2x' :icon='faDownload' />
-        <h3>Windows 1.0.0 version</h3>
+        <h3>Windows 1.0.1 version</h3>
       </button>
-      <button class="button-accent" @click="handleDownload('linux')">
+      <button class="button-accent" disabled @click="handleDownload('linux')">
         <FontAwesomeIcon size='2x' :icon='faDownload' />
         <h3>Linux 1.0.0 version</h3>
+        <h2>Coming soon!</h2>
       </button>
     </div>
   </div>
@@ -38,7 +39,7 @@ function handleDownload(os) {
 
   if (os === 'windows') {
     fileName = 'STOCKMACHINE-1.0.0 Setup.exe';
-    downloadFileDirect('https://drive.google.com/file/d/1gwdSMtp-WZ3bszkH6BmHBqSMitV_aLix/view?usp=sharing');
+    downloadFileDirect('https://github.com/Lumexio/ps-electron/releases/download/1.0.1/STOCKMACHINE-1.0.1-Setup.exe');
   } else {
     fileName = 'stockmachine_1.0.0_amd64.deb';
     downloadFile(`${path}${fileName}`, fileName);
