@@ -28,7 +28,7 @@ a,
 
 .content-section {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   flex-direction: column;
 }
 .card {
