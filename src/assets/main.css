@@ -7,12 +7,44 @@
   font-weight: normal;
 }
 
+/* Typography */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-text-featured);
+  margin: 0;
+}
+
+/* Layout elements */
+main {
+  flex: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  margin-bottom: var(--footer-height);
+  margin-top: var(--header-height);
+}
+
+/* Links */
 a,
 .green {
   text-decoration: none;
   color: rgb(85, 189, 0);
-  transition: 0.4s;
+  transition: var(--transition-speed-slow);
   padding: 3px;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-background);
+  padding: 1rem;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 
 .navbar,
@@ -20,66 +52,78 @@ a,
   color: var(--color-text);
 }
 
-.navbar {
-  background-color: transparent;
-  padding: 5px;
-  text-align: start;
+/* Remove redundant navbar class that duplicates the nav element styles */
+
+/* Icon content classes */
+.icon-windows {
+  content: var(--icon-windows);
+}
+.icon-download {
+  content: var(--icon-download);
+}
+.icon-simple-leaf {
+  content: var(--icon-simple-leaf);
+}
+.icon-simple-portable-brief-case {
+  content: var(--icon-simple-portable-suit-case);
+}
+.icon-simple-portable-feather {
+  content: var(--icon-simple-portable-feather);
 }
 
-.content-section {
-  display: flex;
-  gap: 2rem;
-  flex-direction: column;
-}
-.card {
-  background-color: var(--color-background-soft);
-  border-radius: 10px;
-  box-shadow: 0 2px 3px var(--box-shadow-color);
-  padding: 20px;
-  text-align: center;
-  transition: 0.5s ease-in-out;
+/* Grid layouts */
+.home-section {
+  display: grid;
+  grid-auto-rows: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--standard-gap);
 }
 
-.card-centered {
+.featured {
+  grid-column: span 2;
+}
+
+.home-section__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--standard-gap);
 }
 
-.card-title {
-  height: 50%;
-  color: var(--color-text);
-  border: solid 1px var(--color-border);
-  border-radius: 10px;
-  padding: 1rem;
+/* Button styles - consolidated with shared properties */
+.button-base {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  border-radius: var(--standard-border-radius);
+  cursor: pointer;
+  transition:
+    transform var(--transition-speed-medium),
+    box-shadow var(--transition-speed-medium),
+    background-color var(--transition-speed-medium);
 }
 
-.card-actions {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  gap: 1rem;
-  height: 7rem;
+.button-base:active {
+  transform: scale(0.9);
 }
 
 .button-accent {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border-radius: var(--standard-border-radius);
+  cursor: pointer;
+  transition:
+    transform var(--transition-speed-medium),
+    box-shadow var(--transition-speed-medium),
+    background-color var(--transition-speed-medium);
+  flex-direction: column;
   gap: 10px;
   background-color: var(--color-accent);
   border-radius: 10px;
   padding: 1rem;
   border: solid 1px var(--color-border);
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
   color: var(--text-color-featured);
 }
 
@@ -87,10 +131,44 @@ a,
   box-shadow: 0 5px 15px var(--color-background-soft);
 }
 
-.button-accent:active {
-  transform: scale(0.9);
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--standard-border-radius);
+  cursor: pointer;
+  transition:
+    transform var(--transition-speed-medium),
+    box-shadow var(--transition-speed-medium),
+    background-color var(--transition-speed-medium);
+  flex-direction: row;
+  border: none;
+  background-color: var(--primary-button-background-color);
+  color: var(--color-text-primary-button);
+  font-weight: 600;
+  height: 48px;
+  padding: 0 1rem;
 }
 
+.download-button:hover {
+  background-color: var(--primary-button-hover-color);
+  box-shadow: var(--primary-button-hover-color) 0 0 20px;
+}
+.download-button:active {
+  transform: scale(0.9);
+  box-shadow: var(--primary-button-hover-color) 0 0 0px;
+}
+
+/* Layout containers */
+.cards-product-description {
+  margin: var(--standard-gap);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-auto-rows: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: var(--standard-gap);
+}
+
+/* Footer */
 footer {
   position: fixed;
   left: 0;
@@ -99,14 +177,136 @@ footer {
   color: var(--text-color-featured);
   background-color: var(--color-background);
   text-align: center;
-  border-top: solid 1px var(--text-color-featured);
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-top: solid 1px gray;
+  min-height: var(--footer-height);
 }
+
 footer ul {
   list-style-type: none;
+  display: flex;
+  gap: var(--standard-gap);
 }
+
+/* Helper classes */
 .featured {
   grid-column: span 2;
+}
+
+.title-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20rem;
+  gap: var(--large-gap);
+}
+
+/* Card System - consolidated with shared properties */
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-background-mute);
+  overflow: hidden;
+  transition: all var(--transition-speed-fast) ease;
+  margin-bottom: 16px;
+  padding: 16px;
+  /* Removed max-width to use the width prop instead */
+}
+
+.card.rounded {
+  border-radius: var(--card-border-radius);
+}
+
+/* Simplified Card Sizes */
+
+.card.size-fluid {
+  max-width: none;
+  width: 100%;
+}
+
+/* Elevation/Shadow - kept as is since they're already well-organized */
+.card.elevation-0 {
+  box-shadow: none;
+}
+.card.elevation-1 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.card.elevation-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+.card.elevation-3 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.card.elevation-4 {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.card.elevation-5 {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Color Variants - simplified since they mostly use the same background */
+.card[class*='variant-'] {
+  background-color: var(--color-background-mute);
+}
+
+.card.variant-default,
+.card.variant-primary,
+.card.variant-secondary,
+.card.variant-info {
+  border-color: var(--color-border);
+}
+
+.card.variant-warning {
+  border-color: #fff2d1;
+}
+.card.variant-danger {
+  border-color: #ffe0e0;
+}
+
+/* Card parts */
+.card-header {
+  padding: 16px 16px 8px;
+  text-align: left;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-text-featured);
+}
+
+.card-content {
+  padding: 16px;
+  flex: 1 1 auto;
+}
+
+.card-content.no-padding {
+  padding: 0;
+}
+
+.card-footer {
+  padding: 8px 16px 16px;
+  border-top: 1px solid transparent;
+}
+
+/* Image container */
+.card-image {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover effect */
+.card.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
 }

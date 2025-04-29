@@ -34,6 +34,35 @@
   --color-text: var(--vt-c-text-light-1);
 
   --section-gap: 160px;
+
+  /* Icons definition variables */
+  --icon-download: url('@/assets/download-green.svg');
+  --icon-windows: url('../assets/windows-logo-light.svg');
+  --icon-simple-leaf: url('@/assets/leaf-light.svg');
+  --icon-simple-portable-suit-case: url('@/assets/suitcase-light.svg');
+  --icon-simple-portale-feather: url('@/assets/feather-light.svg');
+
+  /* Button and interaction variables */
+  --primary-button-background-color: #22c55e;
+  --primary-button-hover-color: #16a34a;
+  --color-text-primary-button: var(--vt-c-black);
+  --standard-border-radius: 8px;
+  --card-border-radius: 8px;
+  --transition-speed-fast: 0.2s;
+  --transition-speed-medium: 0.3s;
+  --transition-speed-slow: 0.4s;
+  --standard-gap: 1rem;
+  --large-gap: 2rem;
+
+  /* Layout variables */
+  --footer-height: 8rem;
+  --header-height: 4rem;
+  --card-max-width-small: 15rem;
+  --card-max-width-medium: 20rem;
+
+  /* Text variables */
+  --text-color-featured: var(--color-text);
+  --color-accent: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,6 +76,16 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-2);
+    --color-text-featured: var(--vt-c-text-dark-1);
+    --icon-download: url('@/assets/download-green.svg');
+    --icon-windows: url('../assets/windows-logo-dark.svg');
+    --icon-simple-leaf: url('@/assets/leaf-dark.svg');
+    --icon-simple-portable-suit-case: url('@/assets/suitcase-dark.svg');
+    --icon-simple-portable-feather: url('@/assets/feather-dark.svg');
+
+    --primary-button-background-color: #22c55e;
+    --primary-button-hover-color: #16a34a;
+    --color-text-primary-button: var(--vt-c-white);
   }
 }
 
@@ -67,6 +106,7 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    'Cascadia Code',
     Inter,
     -apple-system,
     BlinkMacSystemFont,
