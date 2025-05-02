@@ -2,7 +2,6 @@
   <nav>
     <div class="title-icon">
       <img src="@/assets/icon.png" alt="stockmachine" width="30rem" />
-
       <h1>Stock machine</h1>
     </div>
     <div class="nav-links">

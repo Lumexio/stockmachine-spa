@@ -9,7 +9,7 @@
 
 /* Typography */
 h1 {
-  font-size: 2rem;
+  font-size: calc(1rem + 1vw);
   font-weight: bold;
   color: var(--color-text-featured);
   margin: 0;

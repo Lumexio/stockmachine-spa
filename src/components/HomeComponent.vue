@@ -12,7 +12,7 @@
     </div>
 
 
-    <CardComponent width="30rem" :customStyle="{ padding: '0px' }">
+    <CardComponent :customStyle="{ padding: '0px', maxWidth: '30rem' }">
       <template v-slot:image>
         <img alt="stock promotional" src="../assets/stockmachine-promotional.jpg" />
       </template>
