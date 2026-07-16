@@ -6,15 +6,18 @@
     </div>
     <div class="nav-links">
       <router-link to="/">Home</router-link>
+      <router-link to="/pricing">Pricing</router-link>
       <router-link to="/download">Download</router-link>
-
     </div>
+    <button class="download-button launch-web-btn" @click="openWebApp">Launch Web App</button>
   </nav>
 </template>
 
-<script>
-export default {
-  name: 'Navbar-component'
+<script setup>
+defineOptions({ name: 'Navbar-component' })
+
+function openWebApp() {
+  window.open('https://stockmachine-web.netlify.app', '_blank')
 }
 </script>
 
@@ -32,6 +35,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: var(--standard-gap);
 }
 
 .title-icon {
@@ -47,5 +51,18 @@ export default {
 
 .nav-links a:hover {
   color: #42b983;
+}
+
+.launch-web-btn {
+  font-size: 0.9rem;
+  padding: 0 1.25rem;
+  height: 40px;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .launch-web-btn {
+    display: none;
+  }
 }
 </style>

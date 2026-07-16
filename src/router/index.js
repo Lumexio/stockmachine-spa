@@ -14,8 +14,12 @@ const routes = [
   {
     path: '/download',
     name: 'Download',
-
     component: () => import('@/components/DownloadView.vue')
+  },
+  {
+    path: '/pricing',
+    name: 'Pricing',
+    component: () => import('@/components/PricingView.vue')
   }
   // Add more routes as needed
 ]
