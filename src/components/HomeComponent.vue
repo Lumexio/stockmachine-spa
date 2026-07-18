@@ -42,7 +42,7 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 function openWebApp() {
-  window.open('https://stockmachine-web.netlify.app', '_blank')
+  window.open('https://app.stockmachine.online', '_blank')
 }
 
 const features = [
