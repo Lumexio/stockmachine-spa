@@ -2,7 +2,7 @@
   <div class="pricing-page">
     <div class="pricing-header">
       <h1>Simple, transparent pricing</h1>
-      <p>Choose between Solo/Individual or Team plans. Upgrade or switch account types seamlessly.</p>
+      <p>Choose the right plan for your inventory scale. Switch between Solo and Organization anytime.</p>
     </div>
 
     <div class="pricing-grid">
@@ -13,59 +13,57 @@
           <span class="price-amount">$0</span>
           <span class="price-period">/mo</span>
         </div>
-        <p class="pricing-card__tagline">For individuals or small teams starting out.</p>
+        <p class="pricing-card__tagline">For starters and simple testing.</p>
         <ul class="pricing-card__features">
           <li><span class="check">✓</span> 1 Location</li>
-          <li><span class="check">✓</span> Up to 150 Products</li>
+          <li><span class="check">✓</span> Up to 50 Products</li>
           <li><span class="check">✓</span> Up to 5 Team Accounts</li>
           <li><span class="check">✓</span> Web, Desktop & Mobile Sync</li>
-          <li><span class="check">✓</span> Excel (.xlsx) Import/Export Only</li>
+          <li><span class="check">✓</span> Excel (.xlsx) Export Only</li>
         </ul>
         <button class="download-button pricing-cta" @click="$router.push('/download')">
           Get Started Free
         </button>
       </div>
 
-      <!-- Pro Individual Tier -->
+      <!-- Pro Tier -->
       <div class="pricing-card">
-        <div class="pricing-card__tier">Pro Solo</div>
+        <div class="pricing-card__tier">Pro</div>
         <div class="pricing-card__price">
-          <span class="price-amount">$9</span>
-          <span class="price-period">/mo</span>
+          <span class="price-amount">$4</span>
+          <span class="price-period">Solo / $7 Org</span>
         </div>
-        <p class="pricing-card__tagline">For solo power users wanting more products for less.</p>
+        <p class="pricing-card__tagline">For growing stores & active inventories.</p>
         <ul class="pricing-card__features">
           <li><span class="check">✓</span> 5 Locations</li>
-          <li><span class="check">✓</span> Up to 500 Products</li>
-          <li><span class="check">✓</span> 1 Solo Individual Account</li>
+          <li><span class="check">✓</span> Up to 150 Products</li>
+          <li><span class="check">✓</span> Up to 15 Team Accounts</li>
           <li><span class="check">✓</span> Web, Desktop & Mobile Sync</li>
           <li><span class="check">✓</span> CSV, JSON & Excel Import/Export</li>
-          <li><span class="check">✓</span> PDF Reports</li>
         </ul>
-        <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'individual')">
-          Subscribe Solo ($9/mo)
+        <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'team')">
+          Subscribe Pro ($7/mo)
         </button>
       </div>
 
-      <!-- Pro Team Tier (highlighted) -->
+      <!-- Max Tier (highlighted) -->
       <div class="pricing-card pricing-card--pro">
-        <div class="pricing-card__badge">Most Popular</div>
-        <div class="pricing-card__tier">Pro Team</div>
+        <div class="pricing-card__badge">Most Powerful</div>
+        <div class="pricing-card__tier">Max</div>
         <div class="pricing-card__price">
-          <span class="price-amount">$19</span>
-          <span class="price-period">/mo</span>
+          <span class="price-amount">$11.99</span>
+          <span class="price-period">Solo / $19.99 Org</span>
         </div>
-        <p class="pricing-card__tagline">Full organization administration for growing teams.</p>
+        <p class="pricing-card__tagline">Maximum capacity with PDF Reports & Team Admin.</p>
         <ul class="pricing-card__features">
-          <li><span class="check">✓</span> 5 Locations</li>
+          <li><span class="check">✓</span> 10 Locations</li>
           <li><span class="check">✓</span> Up to 500 Products</li>
-          <li><span class="check">✓</span> Up to 15 Team Accounts</li>
+          <li><span class="check">✓</span> Up to 50 Team Accounts</li>
           <li><span class="check">✓</span> Team Member Administration</li>
-          <li><span class="check">✓</span> Web, Desktop & Mobile Sync</li>
           <li><span class="check">✓</span> CSV, JSON, Excel & PDF Reports</li>
         </ul>
-        <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'team')">
-          Subscribe Team ($19/mo)
+        <button class="download-button pricing-cta" @click="subscribeStripe('max', 'team')">
+          Subscribe Max ($19.99/mo)
         </button>
       </div>
     </div>
@@ -74,7 +72,6 @@
 
 <script setup>
 function subscribeStripe(targetPlan, targetAccountType) {
-  // Direct Stripe Checkout or Web App Billing Redirect
   const checkoutUrl = `https://app.stockmachine.online/settings?plan=${targetPlan}&type=${targetAccountType}`
   window.open(checkoutUrl, '_blank')
 }

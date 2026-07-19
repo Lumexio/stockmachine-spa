@@ -1,55 +1,127 @@
-/* STOCKMACHINE — Unified Design Tokens (Matching Desktop, Web & Mobile) */
-:root {
+/* STOCKMACHINE — Unified 8 Color Schemes Tokens */
+
+:root, [data-theme="default-light"] {
   --brand-red-primary: #F44336;
   --brand-red-dark-1: #E53935;
-  --brand-red-dark-2: #C62828;
-  --brand-red-light-1: #EF5350;
-  --brand-red-light-2: #EF9A9A;
-
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #fff5f5;
-  --vt-c-white-mute: #ffebee;
-
-  --vt-c-dark-bg: #1A0F0D;
-  --vt-c-dark-surface: #2C1814;
-  --vt-c-dark-mute: #361F1A;
-
-  --vt-c-text-dark: #212121;
-  --vt-c-text-muted: #666666;
-  --vt-c-text-light: #ffffff;
-  --vt-c-text-light-muted: #b0bec5;
-
-  --vt-c-divider-light-1: rgba(244, 67, 54, 0.25);
-  --vt-c-divider-light-2: rgba(244, 67, 54, 0.12);
-  --vt-c-divider-dark-1: rgba(239, 83, 80, 0.35);
-  --vt-c-divider-dark-2: rgba(239, 83, 80, 0.18);
+  --color-background: #FFEBEE;
+  --color-background-soft: #FFF5F5;
+  --color-background-mute: #FFFFFF;
+  --color-border: rgba(244, 67, 54, 0.15);
+  --color-border-hover: rgba(244, 67, 54, 0.35);
+  --color-heading: #212121;
+  --color-text: #212121;
+  --primary-button-background-color: #F44336;
+  --primary-button-hover-color: #E53935;
+  --color-text-primary-button: #FFFFFF;
 }
 
-/* semantic color variables for SPA project */
+[data-theme="default-dark"] {
+  --brand-red-primary: #EF5350;
+  --brand-red-dark-1: #E53935;
+  --color-background: #1A0F0D;
+  --color-background-soft: #2C1814;
+  --color-background-mute: #361F1A;
+  --color-border: rgba(239, 83, 80, 0.25);
+  --color-border-hover: rgba(239, 83, 80, 0.45);
+  --color-heading: #FFFFFF;
+  --color-text: #B0BEC5;
+  --primary-button-background-color: #EF5350;
+  --primary-button-hover-color: #E53935;
+  --color-text-primary-button: #FFFFFF;
+}
+
+[data-theme="electron-neon-light"] {
+  --brand-red-primary: #00B4D8;
+  --brand-red-dark-1: #0077B6;
+  --color-background: #E0F7FA;
+  --color-background-soft: #B2EBF2;
+  --color-background-mute: #FFFFFF;
+  --color-border: rgba(0, 180, 216, 0.2);
+  --color-border-hover: rgba(0, 180, 216, 0.4);
+  --color-heading: #004D40;
+  --color-text: #004D40;
+  --primary-button-background-color: #00B4D8;
+  --primary-button-hover-color: #0077B6;
+  --color-text-primary-button: #FFFFFF;
+}
+
+[data-theme="electron-neon-dark"] {
+  --brand-red-primary: #00F5D4;
+  --brand-red-dark-1: #7B2CBF;
+  --color-background: #0A0F1D;
+  --color-background-soft: #131B2E;
+  --color-background-mute: #1A243B;
+  --color-border: rgba(0, 245, 212, 0.3);
+  --color-border-hover: rgba(0, 245, 212, 0.5);
+  --color-heading: #E0F7FA;
+  --color-text: #80DEEA;
+  --primary-button-background-color: #00F5D4;
+  --primary-button-hover-color: #7B2CBF;
+  --color-text-primary-button: #0A0F1D;
+}
+
+[data-theme="tokyo-day"] {
+  --brand-red-primary: #34548A;
+  --brand-red-dark-1: #2B426F;
+  --color-background: #E1E2E7;
+  --color-background-soft: #D5D6DB;
+  --color-background-mute: #F2F3F7;
+  --color-border: rgba(52, 84, 138, 0.2);
+  --color-border-hover: rgba(52, 84, 138, 0.4);
+  --color-heading: #3760BF;
+  --color-text: #3760BF;
+  --primary-button-background-color: #34548A;
+  --primary-button-hover-color: #8839EF;
+  --color-text-primary-button: #FFFFFF;
+}
+
+[data-theme="tokyo-night"] {
+  --brand-red-primary: #7AA2F7;
+  --brand-red-dark-1: #565F89;
+  --color-background: #1A1B26;
+  --color-background-soft: #24283B;
+  --color-background-mute: #414868;
+  --color-border: rgba(122, 162, 247, 0.3);
+  --color-border-hover: rgba(122, 162, 247, 0.5);
+  --color-heading: #C0CAF5;
+  --color-text: #A9B1D6;
+  --primary-button-background-color: #7AA2F7;
+  --primary-button-hover-color: #BB9AF7;
+  --color-text-primary-button: #1A1B26;
+}
+
+[data-theme="newspaper-light"] {
+  --brand-red-primary: #111111;
+  --brand-red-dark-1: #333333;
+  --color-background: #F4F4F0;
+  --color-background-soft: #EAEAE4;
+  --color-background-mute: #FFFFFF;
+  --color-border: rgba(0, 0, 0, 0.2);
+  --color-border-hover: rgba(0, 0, 0, 0.4);
+  --color-heading: #111111;
+  --color-text: #111111;
+  --primary-button-background-color: #111111;
+  --primary-button-hover-color: #333333;
+  --color-text-primary-button: #FFFFFF;
+}
+
+[data-theme="newspaper-dark"] {
+  --brand-red-primary: #EAEAEA;
+  --brand-red-dark-1: #CCCCCC;
+  --color-background: #121212;
+  --color-background-soft: #1E1E1E;
+  --color-background-mute: #2A2A2A;
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-border-hover: rgba(255, 255, 255, 0.4);
+  --color-heading: #EAEAEA;
+  --color-text: #EAEAEA;
+  --primary-button-background-color: #EAEAEA;
+  --primary-button-hover-color: #CCCCCC;
+  --color-text-primary-button: #121212;
+}
+
+/* Common Layout Rules */
 :root {
-  --color-background: var(--vt-c-white-mute);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-dark);
-  --color-text: var(--vt-c-text-dark);
-
-  --section-gap: 160px;
-
-  /* Icons definition variables */
-  --icon-download: url('@/assets/download-green.svg');
-  --icon-windows: url('../assets/windows-logo-light.svg');
-  --icon-simple-leaf: url('@/assets/leaf-light.svg');
-  --icon-simple-portable-suit-case: url('@/assets/suitcase-light.svg');
-  --icon-simple-portable-feather: url('@/assets/feather-light.svg');
-
-  /* Button and interaction variables */
-  --primary-button-background-color: var(--brand-red-primary);
-  --primary-button-hover-color: var(--brand-red-dark-1);
-  --color-text-primary-button: #ffffff;
   --standard-border-radius: 8px;
   --card-border-radius: 8px;
   --transition-speed-fast: 0.2s;
@@ -57,47 +129,11 @@
   --transition-speed-slow: 0.4s;
   --standard-gap: 1rem;
   --large-gap: 2rem;
-
-  /* Layout variables */
   --footer-height: 6rem;
   --header-height: 4rem;
-  --card-max-width-small: 15rem;
-  --card-max-width-medium: 20rem;
-
-  /* Text variables */
-  --text-color-featured: var(--brand-red-dark-2);
-  --color-accent: var(--brand-red-light-1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-dark-bg);
-    --color-background-soft: var(--vt-c-dark-surface);
-    --color-background-mute: var(--vt-c-dark-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-light);
-    --color-text: var(--vt-c-text-light-muted);
-    --text-color-featured: var(--vt-c-text-light);
-
-    /* Icons variables */
-    --icon-download: url('@/assets/download-green.svg');
-    --icon-windows: url('../assets/windows-logo-dark.svg');
-    --icon-simple-leaf: url('@/assets/leaf-dark.svg');
-    --icon-simple-portable-suit-case: url('@/assets/suitcase-dark.svg');
-    --icon-simple-portable-feather: url('@/assets/feather-dark.svg');
-
-    --primary-button-background-color: var(--brand-red-light-1);
-    --primary-button-hover-color: var(--brand-red-primary);
-    --color-text-primary-button: #ffffff;
-  }
-}
-
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
@@ -107,25 +143,8 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
+  transition: color 0.3s, background-color 0.3s;
   line-height: 1.6;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 1rem;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
