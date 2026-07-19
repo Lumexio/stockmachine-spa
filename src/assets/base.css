@@ -1,37 +1,41 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* STOCKMACHINE — Unified Design Tokens (Matching Desktop, Web & Mobile) */
 :root {
+  --brand-red-primary: #F44336;
+  --brand-red-dark-1: #E53935;
+  --brand-red-dark-2: #C62828;
+  --brand-red-light-1: #EF5350;
+  --brand-red-light-2: #EF9A9A;
+
   --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+  --vt-c-white-soft: #fff5f5;
+  --vt-c-white-mute: #ffebee;
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
+  --vt-c-dark-bg: #1A0F0D;
+  --vt-c-dark-surface: #2C1814;
+  --vt-c-dark-mute: #361F1A;
 
-  --vt-c-indigo: #2c3e50;
+  --vt-c-text-dark: #212121;
+  --vt-c-text-muted: #666666;
+  --vt-c-text-light: #ffffff;
+  --vt-c-text-light-muted: #b0bec5;
 
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --vt-c-divider-light-1: rgba(244, 67, 54, 0.25);
+  --vt-c-divider-light-2: rgba(244, 67, 54, 0.12);
+  --vt-c-divider-dark-1: rgba(239, 83, 80, 0.35);
+  --vt-c-divider-dark-2: rgba(239, 83, 80, 0.18);
 }
 
-/* semantic color variables for this project */
+/* semantic color variables for SPA project */
 :root {
-  --color-background: var(--vt-c-white);
+  --color-background: var(--vt-c-white-mute);
   --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
+  --color-background-mute: var(--vt-c-white);
 
   --color-border: var(--vt-c-divider-light-2);
   --color-border-hover: var(--vt-c-divider-light-1);
 
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
+  --color-heading: var(--vt-c-text-dark);
+  --color-text: var(--vt-c-text-dark);
 
   --section-gap: 160px;
 
@@ -43,9 +47,9 @@
   --icon-simple-portable-feather: url('@/assets/feather-light.svg');
 
   /* Button and interaction variables */
-  --primary-button-background-color: #22c55e;
-  --primary-button-hover-color: #16a34a;
-  --color-text-primary-button: var(--vt-c-black);
+  --primary-button-background-color: var(--brand-red-primary);
+  --primary-button-hover-color: var(--brand-red-dark-1);
+  --color-text-primary-button: #ffffff;
   --standard-border-radius: 8px;
   --card-border-radius: 8px;
   --transition-speed-fast: 0.2s;
@@ -61,22 +65,22 @@
   --card-max-width-medium: 20rem;
 
   /* Text variables */
-  --text-color-featured: var(--color-text);
-  --color-accent: transparent;
+  --text-color-featured: var(--brand-red-dark-2);
+  --color-accent: var(--brand-red-light-1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
+    --color-background: var(--vt-c-dark-bg);
+    --color-background-soft: var(--vt-c-dark-surface);
+    --color-background-mute: var(--vt-c-dark-mute);
 
     --color-border: var(--vt-c-divider-dark-2);
     --color-border-hover: var(--vt-c-divider-dark-1);
 
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-    --color-text-featured: var(--vt-c-text-dark-1);
+    --color-heading: var(--vt-c-text-light);
+    --color-text: var(--vt-c-text-light-muted);
+    --text-color-featured: var(--vt-c-text-light);
 
     /* Icons variables */
     --icon-download: url('@/assets/download-green.svg');
@@ -85,9 +89,9 @@
     --icon-simple-portable-suit-case: url('@/assets/suitcase-dark.svg');
     --icon-simple-portable-feather: url('@/assets/feather-dark.svg');
 
-    --primary-button-background-color: #22c55e;
-    --primary-button-hover-color: #16a34a;
-    --color-text-primary-button: var(--vt-c-white);
+    --primary-button-background-color: var(--brand-red-light-1);
+    --primary-button-hover-color: var(--brand-red-primary);
+    --color-text-primary-button: #ffffff;
   }
 }
 
@@ -108,7 +112,6 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
-    'Cascadia Code',
     Inter,
     -apple-system,
     BlinkMacSystemFont,

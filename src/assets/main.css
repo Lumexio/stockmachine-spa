@@ -26,9 +26,9 @@ main {
 
 /* Links */
 a,
-.green {
+.brand-accent {
   text-decoration: none;
-  color: rgb(85, 189, 0);
+  color: var(--brand-red-primary);
   transition: var(--transition-speed-slow);
   padding: 3px;
 }
