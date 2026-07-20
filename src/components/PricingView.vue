@@ -72,7 +72,7 @@
 
 <script setup>
 function subscribeStripe(targetPlan, targetAccountType) {
-  const checkoutUrl = `https://app.stockmachine.online/settings?plan=${targetPlan}&type=${targetAccountType}`
+  const checkoutUrl = `https://app.stockmachine.online/profile?plan=${targetPlan}&type=${targetAccountType}`
   window.open(checkoutUrl, '_blank')
 }
 </script>
