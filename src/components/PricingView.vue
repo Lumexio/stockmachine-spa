@@ -41,9 +41,14 @@
           <li><span class="check">✓</span> Web, Desktop & Mobile Sync</li>
           <li><span class="check">✓</span> CSV, JSON & Excel Import/Export</li>
         </ul>
-        <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'team')">
-          Subscribe Pro ($7/mo)
-        </button>
+        <div class="pricing-cta-group">
+          <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'individual')">
+            Solo ($4/mo)
+          </button>
+          <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'team')">
+            Org ($7/mo)
+          </button>
+        </div>
       </div>
 
       <!-- Max Tier (highlighted) -->
@@ -62,9 +67,14 @@
           <li><span class="check">✓</span> Team Member Administration</li>
           <li><span class="check">✓</span> CSV, JSON, Excel & PDF Reports</li>
         </ul>
-        <button class="download-button pricing-cta" @click="subscribeStripe('max', 'team')">
-          Subscribe Max ($19.99/mo)
-        </button>
+        <div class="pricing-cta-group">
+          <button class="download-button pricing-cta" @click="subscribeStripe('max', 'individual')">
+            Solo ($11.99/mo)
+          </button>
+          <button class="download-button pricing-cta" @click="subscribeStripe('max', 'team')">
+            Org ($19.99/mo)
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -205,6 +215,12 @@ function subscribeStripe(targetPlan, targetAccountType) {
 }
 
 .pricing-cta {
+  width: 100%;
+}
+
+.pricing-cta-group {
+  display: flex;
+  gap: 10px;
   width: 100%;
   margin-top: auto;
 }
