@@ -72,8 +72,9 @@
 
 <script setup>
 function subscribeStripe(targetPlan, targetAccountType) {
-  const checkoutUrl = `https://app.stockmachine.online/profile?plan=${targetPlan}&type=${targetAccountType}`
-  window.open(checkoutUrl, '_blank')
+  const baseUrl = import.meta.env.DEV ? 'http://localhost:5173' : 'https://app.stockmachine.online';
+  const checkoutUrl = `${baseUrl}/profile?plan=${targetPlan}&type=${targetAccountType}`;
+  window.open(checkoutUrl, '_blank');
 }
 </script>
 
