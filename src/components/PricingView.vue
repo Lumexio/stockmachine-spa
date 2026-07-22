@@ -2,7 +2,10 @@
   <div class="pricing-page">
     <div class="pricing-header">
       <h1>Simple, transparent pricing</h1>
-      <p>Choose the right plan for your inventory scale. Switch between Solo and Organization anytime.</p>
+      <p>
+        Choose the right plan for your inventory scale. Switch between Solo and Organization
+        anytime.
+      </p>
     </div>
 
     <div class="pricing-grid">
@@ -26,8 +29,9 @@
         </button>
       </div>
 
-      <!-- Pro Tier -->
-      <div class="pricing-card">
+      <!-- Pro Tier (highlighted) -->
+      <div class="pricing-card pricing-card--pro">
+        <div class="pricing-card__badge">Most Popular</div>
         <div class="pricing-card__tier">Pro</div>
         <div class="pricing-card__price">
           <span class="price-amount">$4</span>
@@ -42,18 +46,23 @@
           <li><span class="check">✓</span> CSV, JSON & Excel Import/Export</li>
         </ul>
         <div class="pricing-cta-group">
-          <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'individual')">
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="subscribeStripe('pro', 'individual')"
+          >
             Solo ($4/mo)
           </button>
-          <button class="download-button pricing-cta" @click="subscribeStripe('pro', 'team')">
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="subscribeStripe('pro', 'team')"
+          >
             Org ($7/mo)
           </button>
         </div>
       </div>
 
-      <!-- Max Tier (highlighted) -->
-      <div class="pricing-card pricing-card--pro">
-        <div class="pricing-card__badge">Most Powerful</div>
+      <!-- Max Tier -->
+      <div class="pricing-card">
         <div class="pricing-card__tier">Max</div>
         <div class="pricing-card__price">
           <span class="price-amount">$11.99</span>
@@ -68,10 +77,16 @@
           <li><span class="check">✓</span> CSV, JSON, Excel & PDF Reports</li>
         </ul>
         <div class="pricing-cta-group">
-          <button class="download-button pricing-cta" @click="subscribeStripe('max', 'individual')">
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="subscribeStripe('max', 'individual')"
+          >
             Solo ($11.99/mo)
           </button>
-          <button class="download-button pricing-cta" @click="subscribeStripe('max', 'team')">
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="subscribeStripe('max', 'team')"
+          >
             Org ($19.99/mo)
           </button>
         </div>
@@ -82,9 +97,9 @@
 
 <script setup>
 function subscribeStripe(targetPlan, targetAccountType) {
-  const baseUrl = import.meta.env.DEV ? 'http://localhost:5173' : 'https://app.stockmachine.online';
-  const checkoutUrl = `${baseUrl}/profile?plan=${targetPlan}&type=${targetAccountType}`;
-  window.open(checkoutUrl, '_blank');
+  const baseUrl = import.meta.env.DEV ? 'http://localhost:5173' : 'https://app.stockmachine.online'
+  const checkoutUrl = `${baseUrl}/profile?plan=${targetPlan}&type=${targetAccountType}`
+  window.open(checkoutUrl, '_blank')
 }
 </script>
 
@@ -223,6 +238,24 @@ function subscribeStripe(targetPlan, targetAccountType) {
   gap: 10px;
   width: 100%;
   margin-top: auto;
+}
+
+.premium-cta {
+  background: linear-gradient(90deg, #4caf50, #2196f3);
+  background-size: 200% auto;
+  border: none;
+  color: white;
+  transition:
+    0.5s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 4px 15px -3px rgba(76, 175, 80, 0.4);
+}
+
+.premium-cta:hover {
+  background-position: right center;
+  box-shadow: 0 8px 20px -5px rgba(76, 175, 80, 0.6);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 600px) {

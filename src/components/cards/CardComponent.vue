@@ -1,20 +1,24 @@
 <template>
-  <div class="card" :class="[
-    `elevation-${elevation}`,
-    `size-${size}`,
-    `variant-${variant}`,
-    { 'has-border': border },
-    { rounded: rounded },
-    { 'hover-effect': hoverEffect },
-    customClass
-  ]" :style="cardStyles">
+  <div
+    class="card"
+    :class="[
+      `elevation-${elevation}`,
+      `size-${size}`,
+      `variant-${variant}`,
+      { 'has-border': border },
+      { rounded: rounded },
+      { 'hover-effect': hoverEffect },
+      customClass
+    ]"
+    :style="cardStyles"
+  >
     <!-- Card Header (optional) -->
 
     <div v-if="$slots.header || title" class="card-header">
       <slot name="header">
         <img :class="iconName" />
 
-        <h3 v-if="title" class="card-title"> {{ title }}</h3>
+        <h3 v-if="title" class="card-title">{{ title }}</h3>
       </slot>
     </div>
 

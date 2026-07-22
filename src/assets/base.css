@@ -1,122 +1,123 @@
 /* STOCKMACHINE — Unified 8 Color Schemes Tokens */
 
-:root, [data-theme="default-light"] {
-  --brand-red-primary: #F44336;
-  --brand-red-dark-1: #E53935;
-  --color-background: #FFEBEE;
-  --color-background-soft: #FFF5F5;
-  --color-background-mute: #FFFFFF;
+:root,
+[data-theme='default-light'] {
+  --brand-red-primary: #f44336;
+  --brand-red-dark-1: #e53935;
+  --color-background: #ffebee;
+  --color-background-soft: #fff5f5;
+  --color-background-mute: #ffffff;
   --color-border: rgba(244, 67, 54, 0.15);
   --color-border-hover: rgba(244, 67, 54, 0.35);
   --color-heading: #212121;
   --color-text: #212121;
-  --primary-button-background-color: #F44336;
-  --primary-button-hover-color: #E53935;
-  --color-text-primary-button: #FFFFFF;
+  --primary-button-background-color: #f44336;
+  --primary-button-hover-color: #e53935;
+  --color-text-primary-button: #ffffff;
 }
 
-[data-theme="default-dark"] {
-  --brand-red-primary: #EF5350;
-  --brand-red-dark-1: #E53935;
-  --color-background: #1A0F0D;
-  --color-background-soft: #2C1814;
-  --color-background-mute: #361F1A;
+[data-theme='default-dark'] {
+  --brand-red-primary: #ef5350;
+  --brand-red-dark-1: #e53935;
+  --color-background: #1a0f0d;
+  --color-background-soft: #2c1814;
+  --color-background-mute: #361f1a;
   --color-border: rgba(239, 83, 80, 0.25);
   --color-border-hover: rgba(239, 83, 80, 0.45);
-  --color-heading: #FFFFFF;
-  --color-text: #B0BEC5;
-  --primary-button-background-color: #EF5350;
-  --primary-button-hover-color: #E53935;
-  --color-text-primary-button: #FFFFFF;
+  --color-heading: #ffffff;
+  --color-text: #b0bec5;
+  --primary-button-background-color: #ef5350;
+  --primary-button-hover-color: #e53935;
+  --color-text-primary-button: #ffffff;
 }
 
-[data-theme="electron-neon-light"] {
-  --brand-red-primary: #00B4D8;
-  --brand-red-dark-1: #0077B6;
-  --color-background: #E0F7FA;
-  --color-background-soft: #B2EBF2;
-  --color-background-mute: #FFFFFF;
+[data-theme='electron-neon-light'] {
+  --brand-red-primary: #00b4d8;
+  --brand-red-dark-1: #0077b6;
+  --color-background: #e0f7fa;
+  --color-background-soft: #b2ebf2;
+  --color-background-mute: #ffffff;
   --color-border: rgba(0, 180, 216, 0.2);
   --color-border-hover: rgba(0, 180, 216, 0.4);
-  --color-heading: #004D40;
-  --color-text: #004D40;
-  --primary-button-background-color: #00B4D8;
-  --primary-button-hover-color: #0077B6;
-  --color-text-primary-button: #FFFFFF;
+  --color-heading: #004d40;
+  --color-text: #004d40;
+  --primary-button-background-color: #00b4d8;
+  --primary-button-hover-color: #0077b6;
+  --color-text-primary-button: #ffffff;
 }
 
-[data-theme="electron-neon-dark"] {
-  --brand-red-primary: #00F5D4;
-  --brand-red-dark-1: #7B2CBF;
-  --color-background: #0A0F1D;
-  --color-background-soft: #131B2E;
-  --color-background-mute: #1A243B;
+[data-theme='electron-neon-dark'] {
+  --brand-red-primary: #00f5d4;
+  --brand-red-dark-1: #7b2cbf;
+  --color-background: #0a0f1d;
+  --color-background-soft: #131b2e;
+  --color-background-mute: #1a243b;
   --color-border: rgba(0, 245, 212, 0.3);
   --color-border-hover: rgba(0, 245, 212, 0.5);
-  --color-heading: #E0F7FA;
-  --color-text: #80DEEA;
-  --primary-button-background-color: #00F5D4;
-  --primary-button-hover-color: #7B2CBF;
-  --color-text-primary-button: #0A0F1D;
+  --color-heading: #e0f7fa;
+  --color-text: #80deea;
+  --primary-button-background-color: #00f5d4;
+  --primary-button-hover-color: #7b2cbf;
+  --color-text-primary-button: #0a0f1d;
 }
 
-[data-theme="tokyo-day"] {
-  --brand-red-primary: #34548A;
-  --brand-red-dark-1: #2B426F;
-  --color-background: #E1E2E7;
-  --color-background-soft: #D5D6DB;
-  --color-background-mute: #F2F3F7;
+[data-theme='tokyo-day'] {
+  --brand-red-primary: #34548a;
+  --brand-red-dark-1: #2b426f;
+  --color-background: #e1e2e7;
+  --color-background-soft: #d5d6db;
+  --color-background-mute: #f2f3f7;
   --color-border: rgba(52, 84, 138, 0.2);
   --color-border-hover: rgba(52, 84, 138, 0.4);
-  --color-heading: #3760BF;
-  --color-text: #3760BF;
-  --primary-button-background-color: #34548A;
-  --primary-button-hover-color: #8839EF;
-  --color-text-primary-button: #FFFFFF;
+  --color-heading: #3760bf;
+  --color-text: #3760bf;
+  --primary-button-background-color: #34548a;
+  --primary-button-hover-color: #8839ef;
+  --color-text-primary-button: #ffffff;
 }
 
-[data-theme="tokyo-night"] {
-  --brand-red-primary: #7AA2F7;
-  --brand-red-dark-1: #565F89;
-  --color-background: #1A1B26;
-  --color-background-soft: #24283B;
+[data-theme='tokyo-night'] {
+  --brand-red-primary: #7aa2f7;
+  --brand-red-dark-1: #565f89;
+  --color-background: #1a1b26;
+  --color-background-soft: #24283b;
   --color-background-mute: #414868;
   --color-border: rgba(122, 162, 247, 0.3);
   --color-border-hover: rgba(122, 162, 247, 0.5);
-  --color-heading: #C0CAF5;
-  --color-text: #A9B1D6;
-  --primary-button-background-color: #7AA2F7;
-  --primary-button-hover-color: #BB9AF7;
-  --color-text-primary-button: #1A1B26;
+  --color-heading: #c0caf5;
+  --color-text: #a9b1d6;
+  --primary-button-background-color: #7aa2f7;
+  --primary-button-hover-color: #bb9af7;
+  --color-text-primary-button: #1a1b26;
 }
 
-[data-theme="newspaper-light"] {
+[data-theme='newspaper-light'] {
   --brand-red-primary: #111111;
   --brand-red-dark-1: #333333;
-  --color-background: #F4F4F0;
-  --color-background-soft: #EAEAE4;
-  --color-background-mute: #FFFFFF;
+  --color-background: #f4f4f0;
+  --color-background-soft: #eaeae4;
+  --color-background-mute: #ffffff;
   --color-border: rgba(0, 0, 0, 0.2);
   --color-border-hover: rgba(0, 0, 0, 0.4);
   --color-heading: #111111;
   --color-text: #111111;
   --primary-button-background-color: #111111;
   --primary-button-hover-color: #333333;
-  --color-text-primary-button: #FFFFFF;
+  --color-text-primary-button: #ffffff;
 }
 
-[data-theme="newspaper-dark"] {
-  --brand-red-primary: #EAEAEA;
-  --brand-red-dark-1: #CCCCCC;
+[data-theme='newspaper-dark'] {
+  --brand-red-primary: #eaeaea;
+  --brand-red-dark-1: #cccccc;
   --color-background: #121212;
-  --color-background-soft: #1E1E1E;
-  --color-background-mute: #2A2A2A;
+  --color-background-soft: #1e1e1e;
+  --color-background-mute: #2a2a2a;
   --color-border: rgba(255, 255, 255, 0.2);
   --color-border-hover: rgba(255, 255, 255, 0.4);
-  --color-heading: #EAEAEA;
-  --color-text: #EAEAEA;
-  --primary-button-background-color: #EAEAEA;
-  --primary-button-hover-color: #CCCCCC;
+  --color-heading: #eaeaea;
+  --color-text: #eaeaea;
+  --primary-button-background-color: #eaeaea;
+  --primary-button-hover-color: #cccccc;
   --color-text-primary-button: #121212;
 }
 
@@ -129,11 +130,13 @@
   --transition-speed-slow: 0.4s;
   --standard-gap: 1rem;
   --large-gap: 2rem;
-  --footer-height: 6rem;
+  --footer-height: 7rem;
   --header-height: 4rem;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   font-weight: normal;
@@ -143,8 +146,16 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition: color 0.3s, background-color 0.3s;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
   line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
   font-size: 1rem;
 }
