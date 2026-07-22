@@ -32,7 +32,7 @@
           <a href="https://vuejs.org/" target="_blank" class="tech-icon">
             <Icon icon="mingcute:vue-fill" width="1.8rem" height="1.8rem" />
           </a>
-          <a href="https://electronjs.com" target="_blank" class="tech-icon">
+          <a href="https://electronjs.org" target="_blank" class="tech-icon">
             <Icon icon="fontisto:electronjs" width="1.8rem" height="1.8rem" />
           </a>
         </div>
