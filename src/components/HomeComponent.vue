@@ -189,4 +189,16 @@ const features = [
   line-height: 1.5;
   margin: 0;
 }
+
+@media (max-width: 480px) {
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-cta-outline,
+  .hero-cta-primary {
+    width: 100%;
+  }
+}
 </style>

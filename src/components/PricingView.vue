@@ -224,4 +224,10 @@ function subscribeStripe(targetPlan, targetAccountType) {
   width: 100%;
   margin-top: auto;
 }
+
+@media (max-width: 600px) {
+  .pricing-cta-group {
+    flex-direction: column;
+  }
+}
 </style>

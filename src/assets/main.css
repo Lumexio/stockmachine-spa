@@ -170,10 +170,6 @@ nav {
 
 /* Footer */
 footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   color: var(--text-color-featured);
   background-color: var(--color-background);
   text-align: center;
@@ -181,7 +177,7 @@ footer {
   justify-content: space-around;
   align-items: center;
   border-top: solid 1px gray;
-  min-height: var(--footer-height);
+  max-height: var(--footer-height);
 }
 
 footer ul {

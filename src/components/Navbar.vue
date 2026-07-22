@@ -107,4 +107,20 @@ function openWebApp() {
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .title-icon h1 {
+    display: none;
+  }
+  
+  .nav-links {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .theme-select {
+    max-width: 100px;
+    padding: 0.3rem;
+  }
+}
 </style>
