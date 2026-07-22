@@ -183,7 +183,6 @@ footer {
   justify-content: space-around;
   align-items: center;
   border-top: solid 1px gray;
-  max-height: var(--footer-height);
 }
 
 footer ul {

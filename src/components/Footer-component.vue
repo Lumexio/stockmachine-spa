@@ -51,11 +51,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 <style scoped>
 .premium-footer {
   position: relative;
-  background-color: var(--color-background-soft);
+  background-color: var(--color-background);
   padding: 3rem 2rem;
   margin-top: 4rem;
-
   border-top: 1px solid var(--color-border);
+  z-index: 10;
 }
 
 .premium-footer::before {

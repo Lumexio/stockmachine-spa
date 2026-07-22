@@ -3,9 +3,6 @@
     <!-- Full-page Background Decorators -->
     <div class="page-background-layer">
       <div class="glow-backdrop"></div>
-      <div class="bg-decorator decorator-center">
-        <img src="../assets/stockmachine-promotional.jpg" class="blurred-card-center" />
-      </div>
       <div class="bg-decorator decorator-left">
         <img src="../assets/stockmachine-promotional.jpg" class="blurred-card" />
       </div>
@@ -20,8 +17,6 @@
       <div class="floating-3d-icon icon-mobile">
         <FontAwesomeIcon :icon="faMobileAlt" />
       </div>
-      
-      <!-- NEW ICONS -->
       <div class="floating-3d-icon icon-thunder">
         <FontAwesomeIcon :icon="faBolt" />
       </div>
@@ -30,6 +25,18 @@
       </div>
       <div class="floating-3d-icon icon-user">
         <FontAwesomeIcon :icon="faUser" />
+      </div>
+      <div class="floating-3d-icon icon-history">
+        <FontAwesomeIcon :icon="faHistory" />
+      </div>
+      <div class="floating-3d-icon icon-users">
+        <FontAwesomeIcon :icon="faUsers" />
+      </div>
+      <div class="floating-3d-icon icon-csv">
+        <FontAwesomeIcon :icon="faFileCsv" />
+      </div>
+      <div class="floating-3d-icon icon-bell">
+        <FontAwesomeIcon :icon="faBell" />
       </div>
     </div>
 
@@ -61,20 +68,16 @@
       </div>
     </div>
 
-    <!-- Features Grid Section -->
+    <!-- Features Marquee Section -->
     <section class="features-section">
       <h2 class="features-heading">Everything you need to manage your inventory</h2>
-      <div class="carousel-wrapper">
-        <button class="carousel-nav nav-left" @click="scrollCarousel(-1)">
-          <FontAwesomeIcon :icon="faChevronLeft" />
-        </button>
-
-        <div class="features-carousel" ref="carouselRef">
+      <div class="marquee-container">
+        <!-- Render 4 groups (instead of the tutorial's 2) to ensure 4K/Ultrawide compatibility -->
+        <div class="marquee-group" v-for="i in 4" :key="'group-' + i" :aria-hidden="i !== 1">
           <div
-            v-for="(feature, index) in features"
-            :key="feature.title"
-            class="feature-card hover-lift animated-card"
-            :style="{ animationDelay: `${index * 0.1}s` }"
+            v-for="feature in features"
+            :key="i + '-' + feature.title"
+            class="feature-card hover-lift"
           >
             <div class="feature-icon-wrapper" :class="feature.colorClass">
               <FontAwesomeIcon :icon="feature.icon" class="feature-card__icon" />
@@ -83,17 +86,12 @@
             <p class="feature-card__desc">{{ feature.description }}</p>
           </div>
         </div>
-
-        <button class="carousel-nav nav-right" @click="scrollCarousel(1)">
-          <FontAwesomeIcon :icon="faChevronRight" />
-        </button>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import CardComponent from './cards/CardComponent.vue'
 import { useRouter } from 'vue-router'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -106,25 +104,19 @@ import {
   faWifi,
   faMobileAlt,
   faLanguage,
-  faChevronLeft,
-  faChevronRight,
   faBolt,
   faLaptop,
-  faUser
+  faUser,
+  faHistory,
+  faUsers,
+  faFileCsv,
+  faBell
 } from '@fortawesome/free-solid-svg-icons'
 
 const router = useRouter()
-const carouselRef = ref(null)
 
 function openWebApp() {
   window.open('https://app.stockmachine.online', '_blank')
-}
-
-function scrollCarousel(direction) {
-  if (carouselRef.value) {
-    const scrollAmount = 300 // Approximate width of a card + gap
-    carouselRef.value.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' })
-  }
 }
 
 const features = [
@@ -163,6 +155,30 @@ const features = [
     colorClass: 'icon-teal',
     title: 'Multilingual',
     description: 'Available in English, Spanish, French, Japanese, and Russian.'
+  },
+  {
+    icon: faHistory,
+    colorClass: 'icon-pink',
+    title: 'Operation History',
+    description: 'Every stock movement creates an immutable audit trail.'
+  },
+  {
+    icon: faUsers,
+    colorClass: 'icon-yellow',
+    title: 'Team Collaboration',
+    description: 'Invite members and assign custom roles across organizations.'
+  },
+  {
+    icon: faFileCsv,
+    colorClass: 'icon-indigo',
+    title: 'Bulk Import/Export',
+    description: 'Easily migrate data with CSV/JSON/XLSX imports and exports.'
+  },
+  {
+    icon: faBell,
+    colorClass: 'icon-crimson',
+    title: 'Low-Stock Alerts',
+    description: 'Get notified immediately when inventory reaches critical thresholds.'
   }
 ]
 </script>
@@ -326,33 +342,7 @@ const features = [
   pointer-events: none;
 }
 
-.decorator-center {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0.5;
-  animation: floatBackgroundCenter 12s ease-in-out infinite alternate;
-}
 
-.decorator-left {
-  left: 2%;
-  top: 15%;
-  animation: floatBackgroundLeft 15s ease-in-out infinite alternate;
-}
-
-.decorator-right {
-  right: 2%;
-  top: 30%;
-  animation: floatBackgroundRight 18s ease-in-out infinite alternate;
-}
-
-.blurred-card-center {
-  width: 450px;
-  border-radius: 16px;
-  filter: blur(2px);
-  transform: perspective(800px) rotateY(0deg) rotateX(5deg);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-}
 
 .blurred-card {
   width: 250px;
@@ -364,15 +354,6 @@ const features = [
 
 .decorator-right .blurred-card {
   transform: perspective(800px) rotateY(-25deg) rotateX(15deg);
-}
-
-@keyframes floatBackgroundCenter {
-  0% {
-    transform: translate(-50%, -40%) scale(0.95);
-  }
-  100% {
-    transform: translate(-50%, -60%) scale(1.05);
-  }
 }
 
 @keyframes floatBackgroundLeft {
@@ -405,43 +386,87 @@ const features = [
   animation: float3DIcon 8s ease-in-out infinite;
 }
 
+/* Constellation Icon Positions & Colors */
+/* Top Row */
 .icon-box {
   top: 15%;
   left: 15%;
   animation-delay: 0s;
+  font-size: 3.5rem;
 }
 
+.icon-bell {
+  top: 10%;
+  left: 45%;
+  animation-delay: -2s;
+  color: #ef5350;
+  filter: drop-shadow(0 15px 25px rgba(239, 83, 80, 0.4));
+  font-size: 3rem;
+}
+
+.icon-users {
+  top: 18%;
+  right: 15%;
+  animation-delay: -5s;
+  color: #fbc02d;
+  filter: drop-shadow(0 15px 25px rgba(251, 192, 45, 0.4));
+  font-size: 4rem;
+}
+
+/* Middle Row */
 .icon-mobile {
   top: 45%;
-  right: 12%;
+  left: 8%;
   animation-delay: -3s;
-  color: #4fc3f7; /* Cyan color */
+  color: #4fc3f7;
   filter: drop-shadow(0 15px 25px rgba(79, 195, 247, 0.4));
+  font-size: 3.2rem;
 }
 
 .icon-thunder {
-  top: 25%;
-  right: 25%;
+  top: 45%;
+  left: 50%;
   animation-delay: -7s;
-  color: #ffca28; /* Lightning yellow */
+  color: #ffca28;
   filter: drop-shadow(0 15px 25px rgba(255, 202, 40, 0.4));
-  font-size: 4rem; /* Slightly larger */
+  font-size: 4.5rem;
 }
 
+.icon-history {
+  top: 55%;
+  right: 12%;
+  animation-delay: -1s;
+  color: #ec407a;
+  filter: drop-shadow(0 15px 25px rgba(236, 64, 122, 0.4));
+  font-size: 3.5rem;
+}
+
+/* Bottom Row */
 .icon-laptop {
-  top: 70%;
+  top: 80%;
   left: 20%;
-  animation-delay: -5s;
-  color: #ab47bc; /* Purple */
+  animation-delay: -6s;
+  color: #ab47bc;
   filter: drop-shadow(0 15px 25px rgba(171, 71, 188, 0.4));
+  font-size: 3.5rem;
+}
+
+.icon-csv {
+  top: 85%;
+  left: 55%;
+  animation-delay: -4s;
+  color: #5c6bc0;
+  filter: drop-shadow(0 15px 25px rgba(92, 107, 192, 0.4));
+  font-size: 4rem;
 }
 
 .icon-user {
-  top: 80%;
-  right: 20%;
-  animation-delay: -2s;
-  color: #66bb6a; /* Green */
+  top: 75%;
+  right: 25%;
+  animation-delay: -8s;
+  color: #66bb6a;
   filter: drop-shadow(0 15px 25px rgba(102, 187, 106, 0.4));
+  font-size: 3.5rem;
 }
 
 @keyframes float3DIcon {
@@ -472,80 +497,46 @@ const features = [
   text-align: center;
 }
 
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1200px;
+/* Container (matches tutorial's .carousel) */
+.marquee-container {
   display: flex;
-  align-items: center;
-  padding: 0 1rem;
-}
-
-.features-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  gap: var(--standard-gap);
-  padding: 1rem 0 2rem 0;
-  width: 100%;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-.features-carousel::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
-}
-
-.feature-card {
-  flex: 0 0 300px;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  background-color: var(--color-background-soft);
-  border: 1px solid var(--color-border);
-  border-radius: 20px;
-  padding: 2.5rem 1.5rem;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  position: relative;
   overflow: hidden;
-  align-items: center;
-  text-align: center;
+  width: 100vw;
+  max-width: 100%;
+  padding: 2rem 0;
+  
+  /* Fade out left and right edges */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.carousel-nav {
-  background: var(--color-background-soft);
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+/* Group (matches tutorial's .group) */
+.marquee-group {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-heading);
-  cursor: pointer;
-  z-index: 2;
-  transition: all 0.2s ease;
   flex-shrink: 0;
+  gap: var(--standard-gap);
+  padding-right: var(--standard-gap); /* This is the secret sauce from the tutorial */
+  will-change: transform; /* Performance optimization */
+  animation: scrollMarquee 50s linear infinite;
 }
 
-.carousel-nav:hover {
-  background: var(--brand-red-primary);
-  color: white;
-  border-color: var(--brand-red-primary);
+/* Hover to pause */
+.marquee-container:hover .marquee-group {
+  animation-play-state: paused;
 }
 
-.nav-left {
-  margin-right: -20px;
-}
-.nav-right {
-  margin-left: -20px;
+/* Keyframes (matches tutorial's @keyframes scrolling) */
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Perfect -100% translation */
+  }
 }
 
 .feature-card {
+  flex: 0 0 320px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -623,22 +614,24 @@ const features = [
   background: linear-gradient(135deg, #4db6ac, #00796b);
   color: white;
 }
-
-.animated-card {
-  opacity: 0;
-  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+.icon-pink {
+  background: linear-gradient(135deg, #ec407a, #c2185b);
+  color: white;
+}
+.icon-yellow {
+  background: linear-gradient(135deg, #fbc02d, #f57f17);
+  color: white;
+}
+.icon-indigo {
+  background: linear-gradient(135deg, #5c6bc0, #3949ab);
+  color: white;
+}
+.icon-crimson {
+  background: linear-gradient(135deg, #ef5350, #c62828);
+  color: white;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 
 .feature-card__title {
   font-size: 1rem;
@@ -656,10 +649,7 @@ const features = [
 
 @media (max-width: 600px) {
   .feature-card {
-    flex: 0 0 85%; /* Take up most of screen on mobile */
-  }
-  .carousel-nav {
-    display: none; /* Hide buttons on mobile, rely on swipe */
+    flex: 0 0 85vw; /* Take up most of screen width on mobile */
   }
 }
 
