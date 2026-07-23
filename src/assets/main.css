@@ -232,20 +232,10 @@ footer ul {
 .card.elevation-0 {
   box-shadow: none;
 }
-.card.elevation-1 {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-.card.elevation-2 {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-.card.elevation-3 {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-}
-.card.elevation-4 {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-.card.elevation-5 {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+.card:not(.elevation-0) {
+  box-shadow: var(--card-shadow);
+  backdrop-filter: var(--card-backdrop-filter);
+  -webkit-backdrop-filter: var(--card-backdrop-filter);
 }
 
 /* Color Variants - simplified since they mostly use the same background */

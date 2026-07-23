@@ -92,7 +92,6 @@
 </template>
 
 <script setup>
-import CardComponent from './cards/CardComponent.vue'
 import { useRouter } from 'vue-router'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {

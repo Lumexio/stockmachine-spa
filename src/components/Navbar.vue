@@ -136,14 +136,14 @@ function openWebApp() {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: linear-gradient(90deg, var(--brand-red-primary), #e53935);
+  background: linear-gradient(90deg, var(--brand-red-primary), var(--brand-red-dark-1));
   background-size: 200% auto;
   border: none;
-  color: white;
+  color: var(--color-text-primary-button);
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  box-shadow: 0 4px 15px -3px rgba(229, 57, 53, 0.4);
+  box-shadow: 0 4px 15px -3px var(--color-border);
   transition:
     0.4s ease,
     transform 0.2s ease;
@@ -152,7 +152,7 @@ function openWebApp() {
 .premium-btn-nav:hover {
   background-position: right center;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px -3px rgba(229, 57, 53, 0.6);
+  box-shadow: 0 6px 20px -3px var(--color-border-hover);
 }
 
 @media (max-width: 600px) {
