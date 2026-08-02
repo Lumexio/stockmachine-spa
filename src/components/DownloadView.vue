@@ -7,8 +7,8 @@
         <h1 class="hero-title" v-else>Download <span class="highlight">StockMachine</span></h1>
 
         <p class="hero-subtitle">
-          Experience seamless inventory management across all your devices. Install StockMachine
-          today and take control of your stock.
+          Install published Windows, Linux, or Android builds directly from the producing GitHub
+          Releases.
         </p>
 
         <div class="download-buttons-wrapper">
@@ -67,11 +67,11 @@ import { faRocket, faSync, faShieldAlt } from '@fortawesome/free-solid-svg-icons
 import { faWindows, faLinux, faAndroid } from '@fortawesome/free-brands-svg-icons'
 
 const FALLBACK_WINDOWS_URL =
-  'https://github.com/Lumexio/ps-electron/releases/download/1.0.1/STOCKMACHINE-1.0.1-Setup.exe'
+  'https://github.com/Lumexio/stockmachine-desktop/releases/latest'
 const FALLBACK_LINUX_URL =
-  'https://github.com/Lumexio/ps-electron/releases/download/1.0.1/stockmachine_1.0.1_amd64.deb'
+  'https://github.com/Lumexio/stockmachine-desktop/releases/latest'
 const FALLBACK_ANDROID_URL =
-  'https://github.com/Lumexio/stockmachine-mobile/releases/latest/download/app-release.apk'
+  'https://github.com/Lumexio/stockmachine-mobile/releases/latest'
 
 const isLoading = ref(true)
 const desktopVersionTag = ref('')
@@ -127,16 +127,16 @@ const cardContents = [
     colorClass: 'icon-red'
   },
   {
-    title: 'Real-Time Sync',
+    title: 'VPS-Backed Sync',
     content:
-      'Never lose track. Your data synchronizes seamlessly in real-time across your desktop, mobile, and web dashboards.',
+      'Authenticated clients synchronize inventory records through the StockMachine API and its VPS SQLite database.',
     icon: faSync,
     colorClass: 'icon-blue'
   },
   {
-    title: 'Enterprise Security',
+    title: 'Storage Boundary',
     content:
-      'Your inventory data is heavily encrypted and stored safely. We ensure strict compliance with modern privacy standards.',
+      'Appwrite handles account identity only. Inventory data is not stored in Appwrite or advertised as managed-cloud storage.',
     icon: faShieldAlt,
     colorClass: 'icon-green'
   }
@@ -144,11 +144,11 @@ const cardContents = [
 
 function handleDownload(os) {
   if (os === 'windows') {
-    window.open(windowsDownloadUrl.value, '_blank')
+    window.open(windowsDownloadUrl.value, '_blank', 'noopener,noreferrer')
   } else if (os === 'linux') {
-    window.open(linuxDownloadUrl.value, '_blank')
+    window.open(linuxDownloadUrl.value, '_blank', 'noopener,noreferrer')
   } else if (os === 'android') {
-    window.open(androidDownloadUrl.value, '_blank')
+    window.open(androidDownloadUrl.value, '_blank', 'noopener,noreferrer')
   }
 }
 </script>

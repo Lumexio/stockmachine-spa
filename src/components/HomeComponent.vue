@@ -49,22 +49,26 @@
           <span class="text-gradient">solo users</span>
         </h1>
         <p class="hero-subheading">
-          Track products, manage locations, and sync across all your devices — desktop, web, and
-          mobile.
+          Track products and locations through released desktop and Android clients or the hosted
+          web application.
         </p>
         <div class="hero-ctas mt-4">
           <button
             class="download-button hero-cta-primary glowing-btn"
-            @click="router.push('/download')"
+            @click="openWebApp('/register')"
           >
-            <FontAwesomeIcon :icon="faDownload" class="mr-2" />
-            Get Started Free
-          </button>
-          <button class="hero-cta-outline" @click="openWebApp">
             <FontAwesomeIcon :icon="faGlobe" class="mr-2" />
-            Launch Web App
+            Start Free
+          </button>
+          <button class="hero-cta-outline" @click="router.push('/pricing')">
+            <FontAwesomeIcon :icon="faChartLine" class="mr-2" />
+            Compare Plans
           </button>
         </div>
+        <p class="hero-cta-note">
+          The Free plan supports one location and up to 50 products. No paid plan is required to
+          get started.
+        </p>
       </div>
     </div>
 
@@ -95,7 +99,6 @@
 import { useRouter } from 'vue-router'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import {
-  faDownload,
   faGlobe,
   faBuilding,
   faBoxOpen,
@@ -114,8 +117,8 @@ import {
 
 const router = useRouter()
 
-function openWebApp() {
-  window.open('https://app.stockmachine.online', '_blank')
+function openWebApp(path = '') {
+  window.open(`https://app.stockmachine.online${path}`, '_blank', 'noopener,noreferrer')
 }
 
 const features = [
@@ -146,8 +149,8 @@ const features = [
   {
     icon: faMobileAlt,
     colorClass: 'icon-red',
-    title: 'Web + Mobile',
-    description: 'Access your inventory from any browser or mobile device.'
+    title: 'Web + Android',
+    description: 'Use the hosted web app or published Android APKs.'
   },
   {
     icon: faLanguage,
@@ -258,6 +261,14 @@ const features = [
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 1rem;
+}
+
+.hero-cta-note {
+  max-width: 560px;
+  margin: -0.5rem auto 0;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .hero-cta-primary {

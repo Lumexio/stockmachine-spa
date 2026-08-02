@@ -22,7 +22,7 @@
       </select>
       <button class="launch-web-btn premium-btn-nav" @click="openWebApp">
         <FontAwesomeIcon :icon="faGlobe" class="nav-btn-icon" />
-        Launch Web App
+        Start Free
       </button>
     </div>
   </nav>
@@ -49,7 +49,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 function openWebApp() {
-  window.open('https://app.stockmachine.online', '_blank')
+  window.open('https://app.stockmachine.online/register', '_blank', 'noopener,noreferrer')
 }
 </script>
 

@@ -1,0 +1,16 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
+## [Unreleased]
+
+### Added
+
+- AI contributor guidance, pull-request validation, Copilot setup, community templates, and contribution onboarding.
+- Dependabot updates for npm packages and GitHub Actions.
+
+### Changed
+
+- Desktop and Android downloads now resolve from the verified StockMachine release repositories.

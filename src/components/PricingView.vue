@@ -3,8 +3,8 @@
     <div class="pricing-header">
       <h1>Simple, transparent pricing</h1>
       <p>
-        Choose the right plan for your inventory scale. Switch between Solo and Organization
-        anytime.
+        Start with Free and upgrade only when you need more locations, products, or export
+        formats. Paid plan selection continues in the authenticated web app.
       </p>
     </div>
 
@@ -20,13 +20,15 @@
         <ul class="pricing-card__features">
           <li><span class="check">✓</span> 1 Location</li>
           <li><span class="check">✓</span> Up to 50 Products</li>
-          <li><span class="check">✓</span> Up to 5 Team Accounts</li>
-          <li><span class="check">✓</span> Web, Desktop & Mobile Sync</li>
+          <li><span class="check">✓</span> 1 User Account</li>
+          <li><span class="check">✓</span> Local use without cloud connection</li>
+          <li><span class="check">✓</span> Google Drive required for Free cross-device catalog sync</li>
           <li><span class="check">✓</span> Excel (.xlsx) Export Only</li>
         </ul>
-        <button class="download-button pricing-cta" @click="$router.push('/download')">
-          Get Started Free
+        <button class="download-button pricing-cta" @click="openWebApp('/register')">
+          Start Free
         </button>
+        <p class="pricing-cta-note">Create an account with no paid plan required.</p>
       </div>
 
       <!-- Pro Tier (highlighted) -->
@@ -43,22 +45,24 @@
           <li><span class="check">✓</span> Up to 150 Products</li>
           <li><span class="check">✓</span> Up to 15 Team Accounts</li>
           <li><span class="check">✓</span> Web, Desktop & Mobile Sync</li>
+          <li><span class="check">✓</span> VPS-managed sync without a personal cloud account</li>
           <li><span class="check">✓</span> CSV, JSON & Excel Import/Export</li>
         </ul>
         <div class="pricing-cta-group">
           <button
             class="download-button pricing-cta premium-cta"
-            @click="subscribeStripe('pro', 'individual')"
+            @click="continueToPlan('pro', 'individual')"
           >
-            Solo ($4/mo)
+            Continue to Pro Solo
           </button>
           <button
             class="download-button pricing-cta premium-cta"
-            @click="subscribeStripe('pro', 'team')"
+            @click="continueToPlan('pro', 'team')"
           >
-            Org ($7/mo)
+            Continue to Pro Org
           </button>
         </div>
+        <p class="pricing-cta-note">Sign in to review the available billing flow before activation.</p>
       </div>
 
       <!-- Max Tier -->
@@ -74,32 +78,36 @@
           <li><span class="check">✓</span> Up to 500 Products</li>
           <li><span class="check">✓</span> Up to 50 Team Accounts</li>
           <li><span class="check">✓</span> Team Member Administration</li>
+          <li><span class="check">✓</span> VPS-managed multi-location storage</li>
           <li><span class="check">✓</span> CSV, JSON, Excel & PDF Reports</li>
         </ul>
         <div class="pricing-cta-group">
           <button
             class="download-button pricing-cta premium-cta"
-            @click="subscribeStripe('max', 'individual')"
+            @click="continueToPlan('max', 'individual')"
           >
-            Solo ($11.99/mo)
+            Continue to Max Solo
           </button>
           <button
             class="download-button pricing-cta premium-cta"
-            @click="subscribeStripe('max', 'team')"
+            @click="continueToPlan('max', 'team')"
           >
-            Org ($19.99/mo)
+            Continue to Max Org
           </button>
         </div>
+        <p class="pricing-cta-note">Sign in to review the available billing flow before activation.</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-function subscribeStripe(targetPlan, targetAccountType) {
-  const baseUrl = import.meta.env.DEV ? 'http://localhost:5173' : 'https://app.stockmachine.online'
-  const checkoutUrl = `${baseUrl}/profile?plan=${targetPlan}&type=${targetAccountType}`
-  window.open(checkoutUrl, '_blank')
+function openWebApp(path) {
+  window.open(`https://app.stockmachine.online${path}`, '_blank', 'noopener,noreferrer')
+}
+
+function continueToPlan(targetPlan, targetAccountType) {
+  openWebApp(`/profile?plan=${targetPlan}&type=${targetAccountType}`)
 }
 </script>
 
@@ -238,6 +246,14 @@ function subscribeStripe(targetPlan, targetAccountType) {
   gap: 10px;
   width: 100%;
   margin-top: auto;
+}
+
+.pricing-cta-note {
+  color: var(--color-text);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin: -0.25rem 0 0;
+  text-align: center;
 }
 
 .premium-cta {

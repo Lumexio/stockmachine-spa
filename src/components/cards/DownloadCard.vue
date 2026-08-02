@@ -27,18 +27,20 @@ import { faDownload } from '@fortawesome/free-solid-svg-icons'
 import { ref, onMounted } from 'vue'
 
 const windowsDownloadUrl = ref(
-  'https://github.com/Lumexio/ps-electron/releases/download/1.0.1/STOCKMACHINE-1.0.1-Setup.exe'
+  'https://github.com/Lumexio/stockmachine-desktop/releases/latest'
 )
 const linuxDownloadUrl = ref(
-  'https://github.com/Lumexio/ps-electron/releases/download/1.0.1/stockmachine_1.0.1_amd64.deb'
+  'https://github.com/Lumexio/stockmachine-desktop/releases/latest'
 )
 const androidDownloadUrl = ref(
-  'https://github.com/Lumexio/stockmachine-mobile/releases/latest/download/app-release.apk'
+  'https://github.com/Lumexio/stockmachine-mobile/releases/latest'
 )
 
 onMounted(async () => {
   try {
-    const response = await fetch('https://api.github.com/repos/Lumexio/ps-electron/releases/latest')
+    const response = await fetch(
+      'https://api.github.com/repos/Lumexio/stockmachine-desktop/releases/latest'
+    )
     if (response.ok) {
       const release = await response.json()
       const exeAsset = (release.assets ?? []).find((a) => a.name.endsWith('.exe'))
@@ -62,7 +64,7 @@ onMounted(async () => {
 })
 
 function downloadFileDirect(url) {
-  window.open(url, '_blank')
+  window.open(url, '_blank', 'noopener,noreferrer')
 }
 
 function handleDownload(os) {
