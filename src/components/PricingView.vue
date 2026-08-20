@@ -2,7 +2,10 @@
   <div class="pricing-page">
     <div class="pricing-header">
       <h1>Simple, transparent pricing</h1>
-      <p>Choose the plan that works for you. Upgrade or downgrade at any time.</p>
+      <p>
+        Start with Free and upgrade only when you need more locations, products, or export
+        formats. Paid plan selection continues in the authenticated web app.
+      </p>
     </div>
 
     <div class="pricing-grid">
@@ -13,16 +16,19 @@
           <span class="price-amount">$0</span>
           <span class="price-period">/mo</span>
         </div>
-        <p class="pricing-card__tagline">Perfect for individuals getting started.</p>
+        <p class="pricing-card__tagline">For starters and simple testing.</p>
         <ul class="pricing-card__features">
-          <li><span class="check">✓</span> 1 location</li>
-          <li><span class="check">✓</span> Up to 500 products</li>
-          <li><span class="check">✓</span> Desktop app only</li>
-          <li><span class="check">✓</span> Community support</li>
+          <li><span class="check">✓</span> 1 Location</li>
+          <li><span class="check">✓</span> Up to 50 Products</li>
+          <li><span class="check">✓</span> 1 User Account</li>
+          <li><span class="check">✓</span> Local use without cloud connection</li>
+          <li><span class="check">✓</span> Google Drive required for Free cross-device catalog sync</li>
+          <li><span class="check">✓</span> Excel (.xlsx) Export Only</li>
         </ul>
-        <button class="download-button pricing-cta" @click="$router.push('/download')">
-          Get Started
+        <button class="download-button pricing-cta" @click="openWebApp('/register')">
+          Start Free
         </button>
+        <p class="pricing-cta-note">Create an account with no paid plan required.</p>
       </div>
 
       <!-- Pro Tier (highlighted) -->
@@ -30,49 +36,78 @@
         <div class="pricing-card__badge">Most Popular</div>
         <div class="pricing-card__tier">Pro</div>
         <div class="pricing-card__price">
-          <span class="price-amount">$9</span>
-          <span class="price-period">/mo</span>
+          <span class="price-amount">$4</span>
+          <span class="price-period">Solo / $7 Org</span>
         </div>
-        <p class="pricing-card__tagline">For small teams managing multiple sites.</p>
+        <p class="pricing-card__tagline">For growing stores & active inventories.</p>
         <ul class="pricing-card__features">
-          <li><span class="check">✓</span> 5 locations</li>
-          <li><span class="check">✓</span> Unlimited products</li>
-          <li><span class="check">✓</span> Desktop + Web app</li>
-          <li><span class="check">✓</span> Email support</li>
-          <li><span class="check">✓</span> Export (CSV / JSON / XLSX)</li>
+          <li><span class="check">✓</span> 5 Locations</li>
+          <li><span class="check">✓</span> Up to 150 Products</li>
+          <li><span class="check">✓</span> Up to 15 Team Accounts</li>
+          <li><span class="check">✓</span> Web, Desktop & Mobile Sync</li>
+          <li><span class="check">✓</span> VPS-managed sync without a personal cloud account</li>
+          <li><span class="check">✓</span> CSV, JSON & Excel Import/Export</li>
         </ul>
-        <button class="download-button pricing-cta" @click="openWebApp">Get Started</button>
+        <div class="pricing-cta-group">
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="continueToPlan('pro', 'individual')"
+          >
+            Continue to Pro Solo
+          </button>
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="continueToPlan('pro', 'team')"
+          >
+            Continue to Pro Org
+          </button>
+        </div>
+        <p class="pricing-cta-note">Sign in to review the available billing flow before activation.</p>
       </div>
 
-      <!-- Enterprise Tier -->
+      <!-- Max Tier -->
       <div class="pricing-card">
-        <div class="pricing-card__tier">Enterprise</div>
+        <div class="pricing-card__tier">Max</div>
         <div class="pricing-card__price">
-          <span class="price-amount">Custom</span>
+          <span class="price-amount">$11.99</span>
+          <span class="price-period">Solo / $19.99 Org</span>
         </div>
-        <p class="pricing-card__tagline">Built for large organisations with complex needs.</p>
+        <p class="pricing-card__tagline">Maximum capacity with PDF Reports & Team Admin.</p>
         <ul class="pricing-card__features">
-          <li><span class="check">✓</span> Unlimited locations</li>
-          <li><span class="check">✓</span> Unlimited products</li>
-          <li><span class="check">✓</span> All clients (desktop, web, mobile)</li>
-          <li><span class="check">✓</span> Priority support</li>
-          <li><span class="check">✓</span> Custom integrations</li>
+          <li><span class="check">✓</span> 10 Locations</li>
+          <li><span class="check">✓</span> Up to 500 Products</li>
+          <li><span class="check">✓</span> Up to 50 Team Accounts</li>
+          <li><span class="check">✓</span> Team Member Administration</li>
+          <li><span class="check">✓</span> VPS-managed multi-location storage</li>
+          <li><span class="check">✓</span> CSV, JSON, Excel & PDF Reports</li>
         </ul>
-        <button class="download-button pricing-cta pricing-cta--outline" @click="contactUs">
-          Contact Us
-        </button>
+        <div class="pricing-cta-group">
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="continueToPlan('max', 'individual')"
+          >
+            Continue to Max Solo
+          </button>
+          <button
+            class="download-button pricing-cta premium-cta"
+            @click="continueToPlan('max', 'team')"
+          >
+            Continue to Max Org
+          </button>
+        </div>
+        <p class="pricing-cta-note">Sign in to review the available billing flow before activation.</p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-function openWebApp() {
-  window.open('https://app.stockmachine.online', '_blank')
+function openWebApp(path) {
+  window.open(`https://app.stockmachine.online${path}`, '_blank', 'noopener,noreferrer')
 }
 
-function contactUs() {
-  window.location.href = 'mailto:contact@stockmachine.app'
+function continueToPlan(targetPlan, targetAccountType) {
+  openWebApp(`/profile?plan=${targetPlan}&type=${targetAccountType}`)
 }
 </script>
 
@@ -102,7 +137,7 @@ function contactUs() {
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   gap: var(--large-gap);
   width: 100%;
-  max-width: 960px;
+  max-width: 1050px;
   align-items: start;
 }
 
@@ -123,12 +158,12 @@ function contactUs() {
 }
 
 .pricing-card--pro {
-  border: 2px solid var(--primary-button-background-color);
-  box-shadow: 0 0 0 1px var(--primary-button-background-color);
+  border: 2px solid var(--brand-red-primary);
+  box-shadow: 0 0 0 1px var(--brand-red-primary);
 }
 
 .pricing-card--pro:hover {
-  box-shadow: 0 4px 24px rgba(34, 197, 94, 0.35);
+  box-shadow: 0 4px 24px rgba(244, 67, 54, 0.35);
 }
 
 .pricing-card__badge {
@@ -136,8 +171,8 @@ function contactUs() {
   top: -0.75rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: var(--primary-button-background-color);
-  color: var(--color-text-primary-button);
+  background-color: var(--brand-red-primary);
+  color: #ffffff;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 0.2rem 0.8rem;
@@ -152,7 +187,7 @@ function contactUs() {
 }
 
 .pricing-card--pro .pricing-card__tier {
-  color: var(--primary-button-background-color);
+  color: var(--brand-red-primary);
 }
 
 .pricing-card__price {
@@ -197,25 +232,51 @@ function contactUs() {
 }
 
 .check {
-  color: var(--primary-button-background-color);
+  color: var(--brand-red-primary);
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .pricing-cta {
   width: 100%;
+}
+
+.pricing-cta-group {
+  display: flex;
+  gap: 10px;
+  width: 100%;
   margin-top: auto;
 }
 
-.pricing-cta--outline {
-  background-color: transparent;
-  border: 2px solid var(--primary-button-background-color);
-  color: var(--primary-button-background-color);
+.pricing-cta-note {
+  color: var(--color-text);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  margin: -0.25rem 0 0;
+  text-align: center;
 }
 
-.pricing-cta--outline:hover {
-  background-color: var(--primary-button-background-color);
-  color: var(--color-text-primary-button);
-  box-shadow: none;
+.premium-cta {
+  background: linear-gradient(90deg, #4caf50, #2196f3);
+  background-size: 200% auto;
+  border: none;
+  color: white;
+  transition:
+    0.5s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  box-shadow: 0 4px 15px -3px rgba(76, 175, 80, 0.4);
+}
+
+.premium-cta:hover {
+  background-position: right center;
+  box-shadow: 0 8px 20px -5px rgba(76, 175, 80, 0.6);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .pricing-cta-group {
+    flex-direction: column;
+  }
 }
 </style>

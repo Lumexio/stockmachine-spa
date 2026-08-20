@@ -1,94 +1,153 @@
-/* color palette from <https://github.com/vuejs/theme> */
-:root {
-  --vt-c-white: #ffffff;
-  --vt-c-white-soft: #f8f8f8;
-  --vt-c-white-mute: #f2f2f2;
+/* STOCKMACHINE — Unified 8 Color Schemes Tokens */
 
-  --vt-c-black: #181818;
-  --vt-c-black-soft: #222222;
-  --vt-c-black-mute: #282828;
-
-  --vt-c-indigo: #2c3e50;
-
-  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
-  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
-  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
-  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
-
-  --vt-c-text-light-1: var(--vt-c-indigo);
-  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
-  --vt-c-text-dark-1: var(--vt-c-white);
-  --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+:root,
+[data-theme='default-light'] {
+  --brand-red-primary: #F44336;
+  --brand-red-dark-1: #9E9E9E;
+  --color-background: #FAFAF8;
+  --color-background-soft: #FFFFFF;
+  --color-background-mute: #FFFFFF;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  --card-backdrop-filter: none;
+  --color-border: color-mix(in srgb, #F44336 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #F44336 40%, transparent);
+  --color-heading: #1C1917;
+  --color-text: #1C1917;
+  --primary-button-background-color: #F44336;
+  --primary-button-hover-color: #9E9E9E;
+  --color-text-primary-button: #FFFFFF;
 }
 
-/* semantic color variables for this project */
+[data-theme='default-dark'] {
+  --brand-red-primary: #EF5350;
+  --brand-red-dark-1: #616161;
+  --color-background: #0F172A;
+  --color-background-soft: color-mix(in srgb, #1E293B 85%, transparent);
+  --color-background-mute: color-mix(in srgb, #1E293B 85%, transparent);
+  --card-shadow: none;
+  --card-backdrop-filter: blur(12px);
+  --color-border: color-mix(in srgb, #EF5350 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #EF5350 40%, transparent);
+  --color-heading: #F1F5F9;
+  --color-text: #F1F5F9;
+  --primary-button-background-color: #EF5350;
+  --primary-button-hover-color: #616161;
+  --color-text-primary-button: #121212;
+}
+
+[data-theme='electron-neon-light'] {
+  --brand-red-primary: #00B4D8;
+  --brand-red-dark-1: #0077B6;
+  --color-background: #E0F7FA;
+  --color-background-soft: #FFFFFF;
+  --color-background-mute: #FFFFFF;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  --card-backdrop-filter: none;
+  --color-border: color-mix(in srgb, #00B4D8 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #00B4D8 40%, transparent);
+  --color-heading: #004D40;
+  --color-text: #004D40;
+  --primary-button-background-color: #00B4D8;
+  --primary-button-hover-color: #0077B6;
+  --color-text-primary-button: #FFFFFF;
+}
+
+[data-theme='electron-neon-dark'] {
+  --brand-red-primary: #00F5D4;
+  --brand-red-dark-1: #7B2CBF;
+  --color-background: #0A0F1D;
+  --color-background-soft: color-mix(in srgb, #131B2E 85%, transparent);
+  --color-background-mute: color-mix(in srgb, #131B2E 85%, transparent);
+  --card-shadow: none;
+  --card-backdrop-filter: blur(12px);
+  --color-border: color-mix(in srgb, #00F5D4 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #00F5D4 40%, transparent);
+  --color-heading: #E0F7FA;
+  --color-text: #E0F7FA;
+  --primary-button-background-color: #00F5D4;
+  --primary-button-hover-color: #7B2CBF;
+  --color-text-primary-button: #0A0F1D;
+}
+
+[data-theme='tokyo-day'] {
+  --brand-red-primary: #34548A;
+  --brand-red-dark-1: #89DDF3;
+  --color-background: #E1E2E7;
+  --color-background-soft: #F2F3F7;
+  --color-background-mute: #F2F3F7;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  --card-backdrop-filter: none;
+  --color-border: color-mix(in srgb, #34548A 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #34548A 40%, transparent);
+  --color-heading: #3760BF;
+  --color-text: #3760BF;
+  --primary-button-background-color: #34548A;
+  --primary-button-hover-color: #89DDF3;
+  --color-text-primary-button: #FFFFFF;
+}
+
+[data-theme='tokyo-night'] {
+  --brand-red-primary: #7AA2F7;
+  --brand-red-dark-1: #565F89;
+  --color-background: #1A1B26;
+  --color-background-soft: color-mix(in srgb, #24283B 85%, transparent);
+  --color-background-mute: color-mix(in srgb, #24283B 85%, transparent);
+  --card-shadow: none;
+  --card-backdrop-filter: blur(12px);
+  --color-border: color-mix(in srgb, #7AA2F7 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #7AA2F7 40%, transparent);
+  --color-heading: #C0CAF5;
+  --color-text: #C0CAF5;
+  --primary-button-background-color: #7AA2F7;
+  --primary-button-hover-color: #565F89;
+  --color-text-primary-button: #1A1B26;
+}
+
+[data-theme='newspaper-light'] {
+  --brand-red-primary: #111111;
+  --brand-red-dark-1: #555555;
+  --color-background: #F4F4F0;
+  --color-background-soft: #FFFFFF;
+  --color-background-mute: #FFFFFF;
+  --card-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  --card-backdrop-filter: none;
+  --color-border: color-mix(in srgb, #111111 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #111111 40%, transparent);
+  --color-heading: #111111;
+  --color-text: #111111;
+  --primary-button-background-color: #111111;
+  --primary-button-hover-color: #555555;
+  --color-text-primary-button: #FFFFFF;
+}
+
+[data-theme='newspaper-dark'] {
+  --brand-red-primary: #EAEAEA;
+  --brand-red-dark-1: #AAAAAA;
+  --color-background: #121212;
+  --color-background-soft: color-mix(in srgb, #1E1E1E 85%, transparent);
+  --color-background-mute: color-mix(in srgb, #1E1E1E 85%, transparent);
+  --card-shadow: none;
+  --card-backdrop-filter: blur(12px);
+  --color-border: color-mix(in srgb, #EAEAEA 20%, transparent);
+  --color-border-hover: color-mix(in srgb, #EAEAEA 40%, transparent);
+  --color-heading: #EAEAEA;
+  --color-text: #EAEAEA;
+  --primary-button-background-color: #EAEAEA;
+  --primary-button-hover-color: #AAAAAA;
+  --color-text-primary-button: #121212;
+}
+
+/* Common Layout Rules */
 :root {
-  --color-background: var(--vt-c-white);
-  --color-background-soft: var(--vt-c-white-soft);
-  --color-background-mute: var(--vt-c-white-mute);
-
-  --color-border: var(--vt-c-divider-light-2);
-  --color-border-hover: var(--vt-c-divider-light-1);
-
-  --color-heading: var(--vt-c-text-light-1);
-  --color-text: var(--vt-c-text-light-1);
-
-  --section-gap: 160px;
-
-  /* Icons definition variables */
-  --icon-download: url('@/assets/download-green.svg');
-  --icon-windows: url('../assets/windows-logo-light.svg');
-  --icon-simple-leaf: url('@/assets/leaf-light.svg');
-  --icon-simple-portable-suit-case: url('@/assets/suitcase-light.svg');
-  --icon-simple-portable-feather: url('@/assets/feather-light.svg');
-
-  /* Button and interaction variables */
-  --primary-button-background-color: #22c55e;
-  --primary-button-hover-color: #16a34a;
-  --color-text-primary-button: var(--vt-c-black);
   --standard-border-radius: 8px;
-  --card-border-radius: 8px;
+  --card-border-radius: 12px;
   --transition-speed-fast: 0.2s;
   --transition-speed-medium: 0.3s;
   --transition-speed-slow: 0.4s;
   --standard-gap: 1rem;
   --large-gap: 2rem;
-
-  /* Layout variables */
-  --footer-height: 6rem;
+  --footer-height: 7rem;
   --header-height: 4rem;
-  --card-max-width-small: 15rem;
-  --card-max-width-medium: 20rem;
-
-  /* Text variables */
-  --text-color-featured: var(--color-text);
-  --color-accent: transparent;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--vt-c-black);
-    --color-background-soft: var(--vt-c-black-soft);
-    --color-background-mute: var(--vt-c-black-mute);
-
-    --color-border: var(--vt-c-divider-dark-2);
-    --color-border-hover: var(--vt-c-divider-dark-1);
-
-    --color-heading: var(--vt-c-text-dark-1);
-    --color-text: var(--vt-c-text-dark-2);
-    --color-text-featured: var(--vt-c-text-dark-1);
-
-    /* Icons variables */
-    --icon-download: url('@/assets/download-green.svg');
-    --icon-windows: url('../assets/windows-logo-dark.svg');
-    --icon-simple-leaf: url('@/assets/leaf-dark.svg');
-    --icon-simple-portable-suit-case: url('@/assets/suitcase-dark.svg');
-    --icon-simple-portable-feather: url('@/assets/feather-dark.svg');
-
-    --primary-button-background-color: #22c55e;
-    --primary-button-hover-color: #16a34a;
-    --color-text-primary-button: var(--vt-c-white);
-  }
 }
 
 *,
@@ -104,25 +163,15 @@ body {
   color: var(--color-text);
   background: var(--color-background);
   transition:
-    color 0.5s,
-    background-color 0.5s;
+    color 0.3s,
+    background-color 0.3s;
   line-height: 1.6;
   font-family:
-    'Cascadia Code',
     Inter,
     -apple-system,
     BlinkMacSystemFont,
     'Segoe UI',
     Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
     sans-serif;
   font-size: 1rem;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a marketing, pricing, or download-site improvement.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Visitor need
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: Proposed content or interaction
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Source-of-truth impact
+      description: Note pricing, backend limits, release artifacts, domains, and client claims that must stay aligned.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
