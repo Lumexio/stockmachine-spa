@@ -20,7 +20,7 @@
       <div class="footer-section footer-brand">
         <img src="@/assets/icon.png" alt="StockMachine Logo" class="footer-logo" />
         <p class="copyright">© 2026 StockMachine. All rights reserved.</p>
-        <a href="https://www.paypal.com" target="_blank" class="subtle-coffee-link">
+        <a href="https://buy.stripe.com/aFa3cw4SR4iKerM8TgdnW00" target="_blank" class="subtle-coffee-link">
           <FontAwesomeIcon :icon="faMugHot" class="subtle-coffee-icon" />
           Buy the dev a coffee
         </a>
